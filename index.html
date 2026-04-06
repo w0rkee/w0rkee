@@ -22,47 +22,50 @@
         }
 
         /* STILE LOGO CODE-BASED */
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px; /* Aumenta questo valore per distanziarlo dalla scritta sotto */
-        }
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
 
-        .nomad-arc {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: -5px;
-            transform: scaleX(1.1);
-        }
+/* Stile per la scritta curva */
+.nomad-svg {
+    overflow: visible;
+    margin-bottom: -15px; /* Avvicina l'arco alla scritta sotto */
+}
 
-        .workee-main {
-            font-size: 4rem;
-            font-weight: 700;
-            color: white;
-            letter-spacing: -2px;
-            position: relative;
-        }
+.nomad-text {
+    fill: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px; /* Regola la grandezza del testo nell'arco */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
-        .workee-main span {
-            display: inline-block;
-            position: relative;
-        }
+.workee-main {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -2px;
+    line-height: 1;
+}
 
-        .workee-main span::after {
-            content: '';
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 12px;
-            height: 12px;
-            background: white;
-            clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
-        }
+/* Resto del codice della "O" con il pin... */
+.workee-main span { position: relative; display: inline-block; }
+.workee-main span::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: white;
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+}
 
         .overlay {
             background: transparent; text-align: center; width: auto; max-width: 900px;
@@ -98,14 +101,21 @@
         @media (max-width: 700px) { .menu-grid { grid-template-columns: 1fr 1fr; } }
     </style>
 </head>
-<body>
 
-<div class="hero">
+<body>
+ <div class="hero">
     <div class="overlay">
         <div class="logo-container">
-            <div class="nomad-arc">NOMAD WORK</div>
-            <div class="workee-main">w<span>O</span>rkee</div>
-        </div>
+    <svg viewBox="0 0 200 70" width="250" height="90" class="nomad-svg">
+        <path id="curve" d="M 30,60 Q 100,0 170,60" fill="transparent" />
+        <text>
+            <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="nomad-text">
+                NOMAD WORK
+            </textPath>
+        </text>
+    </svg>
+    <div class="workee-main">w<span>O</span>rkee</div>
+</div> 
 
         <h1>NOMAD WORK REDEFINED</h1>
 
