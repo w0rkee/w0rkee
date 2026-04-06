@@ -15,105 +15,144 @@
             scroll-behavior: smooth;
         }
 
-        /* IMMAGINE DI TESTATA */
+        /* TESTATA CON IMMAGINE */
         .header-locale { 
-            height: 45vh; 
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('img/locale1.jpg') center/cover; 
+            height: 40vh; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/locale1.jpg') center/cover; 
+            background-attachment: fixed;
         }
 
-        /* CONTENITORE SCHEDA */
+        /* SCHEDA CONTENITORE */
         .container { 
-            max-width: 850px; 
-            margin: -60px auto 50px; 
+            max-width: 900px; 
+            margin: -80px auto 60px; 
             background: white; 
             padding: 40px; 
-            border-radius: 15px; 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15); 
+            border-radius: 20px; 
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1); 
             position: relative; 
+            z-index: 2;
         }
 
         .back-link { 
-            display: inline-block; 
+            display: inline-flex; 
+            align-items: center;
             margin-bottom: 25px; 
             color: #006B6B; 
             text-decoration: none; 
-            font-weight: bold; 
-            font-size: 0.9rem;
-            transition: 0.2s;
+            font-weight: 700; 
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: 0.3s;
         }
-        .back-link:hover { color: #333; transform: translateX(-5px); }
+        .back-link:hover { transform: translateX(-5px); color: #333; }
 
         .info-tag { 
             display: inline-block; 
             background: #e0f2f2; 
             color: #006B6B; 
-            padding: 6px 18px; 
-            border-radius: 20px; 
-            font-size: 0.75rem; 
+            padding: 6px 15px; 
+            border-radius: 30px; 
+            font-size: 0.7rem; 
             font-weight: 700; 
             margin-bottom: 15px; 
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         h1 { 
             color: #006B6B; 
             text-transform: uppercase; 
-            margin: 0 0 15px 0; 
-            font-size: 2.2rem;
+            margin: 0 0 20px 0; 
+            font-size: 2.5rem;
+            letter-spacing: -1px;
         }
 
-        p { line-height: 1.8; color: #555; font-size: 1rem; }
+        p { line-height: 1.8; color: #666; font-size: 1.05rem; }
 
-        .services-box {
-            margin: 30px 0; 
-            border-top: 1px solid #eee; 
-            padding-top: 25px;
+        /* SERVIZI */
+        .services-grid {
+            margin: 40px 0; 
+            padding: 30px;
+            background: #fdfdfd;
+            border-radius: 15px;
+            border: 1px solid #eee;
         }
 
-        .services-box ul {
-            list-style: none;
-            padding: 0;
+        .services-grid h3 { 
+            margin-top: 0; 
+            font-size: 1rem; 
+            color: #333; 
+            text-transform: uppercase; 
+            margin-bottom: 20px;
+        }
+
+        .services-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .services-box li::before {
-            content: "✓";
+        .services-list li {
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .services-list li::before {
+            content: "●";
             color: #006B6B;
-            font-weight: bold;
-            margin-right: 10px;
+            font-size: 1.2rem;
+            margin-right: 12px;
         }
 
-        /* SEZIONE PRENOTAZIONE (TIDYCAL) */
-        .booking-header {
+        /* AREA PRENOTAZIONE TIDYCAL */
+        .booking-section {
             margin-top: 50px;
-            padding-top: 30px;
-            border-top: 3px solid #006B6B;
+            padding-top: 40px;
+            border-top: 2px solid #f0f0f0;
             text-align: center;
         }
 
-        .booking-header h2 {
+        .booking-section h2 {
             color: #006B6B;
             text-transform: uppercase;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
         }
 
-        #tidycal-embed {
+        .booking-subtitle {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        /* IL CALENDARIO VERO E PROPRIO */
+        .tidycal-container {
             width: 100%;
-            min-height: 750px; /* Spazio per il calendario */
-            margin-top: 20px;
-            border-radius: 10px;
+            height: 800px; /* Altezza ottimale per visualizzare tutto il calendario */
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        /* OTTIMIZZAZIONE MOBILE */
-        @media (max-width: 700px) {
-            .container { width: 90%; padding: 25px; margin-top: -40px; }
-            h1 { font-size: 1.6rem; }
-            .services-box ul { grid-template-columns: 1fr; }
-            #tidycal-embed { min-height: 900px; } /* Più alto su mobile */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container { width: 92%; padding: 25px; margin-top: -60px; }
+            h1 { font-size: 1.8rem; }
+            .services-list { grid-template-columns: 1fr; }
+            .tidycal-container { height: 950px; } /* Più spazio su mobile */
         }
     </style>
 </head>
@@ -122,36 +161,38 @@
     <div class="header-locale"></div>
 
     <div class="container">
-        <a href="index.html" class="back-link">← Torna alla Home</a>
+        <a href="index.html" class="back-link">← Torna alla lista locali</a>
         
-        <br>
-        <div class="info-tag">Palermo - Zona Terrazze</div>
+        <div class="info-tag">Palermo Centro - Fronte Mare</div>
         
         <h1>Bar Le Terrazze</h1>
         
         <p>
-            Situato in una posizione privilegiata con vista mozzafiato, Bar Le Terrazze è il luogo ideale per chi cerca ispirazione. 
-            Offriamo postazioni con Wi-Fi ultra-veloce, prese elettriche accessibili e un ambiente luminoso perfetto per le tue sessioni di smart working.
+            Lavora con una vista mozzafiato. Bar Le Terrazze offre un ambiente sereno e professionale, ideale per chi ha bisogno di concentrazione e una connessione Wi-Fi impeccabile. Le nostre postazioni sono progettate per darti il massimo comfort durante la giornata.
         </p>
         
-        <div class="services-box">
-            <strong>Servizi inclusi nella prenotazione:</strong>
-            <ul>
-                <li>Wi-Fi Fibra Alta Velocità</li>
-                <li>Postazione riservata</li>
-                <li>Sconto 10% su tutta la caffetteria</li>
-                <li>Prese elettriche dedicate</li>
-                <li>Ambiente climatizzato</li>
-                <li>Accesso Terrazza Relax</li>
+        <div class="services-grid">
+            <h3>Cosa include la tua prenotazione:</h3>
+            <ul class="services-list">
+                <li>Wi-Fi Fibra 1GB</li>
+                <li>Postazione dedicata</li>
+                <li>Sconto 10% su Drink & Food</li>
+                <li>Prese elettriche al tavolo</li>
+                <li>Climatizzazione</li>
+                <li>Accesso area Lounge</li>
             </ul>
         </div>
 
-        <div class="booking-header" id="prenota">
-            <h2>Scegli il tuo slot</h2>
-            <p style="font-size: 0.9rem;">Seleziona la data e l'ora per riservare il tuo tavolo.</p>
+        <div class="booking-section">
+            <h2>Prenota la tua postazione</h2>
+            <p class="booking-subtitle">Scegli il giorno e l'orario più comodi per te dal calendario qui sotto.</p>
             
-            <div id="tidycal-embed" data-path="w0rkee/bar-le-terrazze"></div>
-            <script src="https://asset-tidycal.bolt.eu/embed.js" async></script>
+            <div class="tidycal-container">
+                <iframe 
+                    src="https://tidycal.com/w0rkee/bar-le-terrazze" 
+                    loading="lazy">
+                </iframe>
+            </div>
         </div>
 
     </div>
