@@ -64,5 +64,27 @@
         </div>
     </div>
 
+    <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; background: rgba(0, 107, 107, 0.95); color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; display: none; text-align: center; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.5;">
+        Utilizziamo i cookie per migliorare la tua esperienza e per le prenotazioni. Continuando a navigare, accetti la nostra privacy policy.
+    </p>
+    <button onclick="acceptCookies()" style="background: white; color: #006b6b; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: 0.3s;">Accetto</button>
+</div>
+
+<script>
+    // Funzione per mostrare il banner se non è già stato accettato
+    window.onload = function() {
+        if (!localStorage.getItem('w0rkee_cookies_accepted')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    }
+
+    // Funzione per nascondere il banner e salvare la scelta
+    function acceptCookies() {
+        localStorage.setItem('w0rkee_cookies_accepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+</script>
+    
 </body>
 </html>
