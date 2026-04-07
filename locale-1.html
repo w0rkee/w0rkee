@@ -232,5 +232,20 @@
 
     </div>
 
+<script>
+    // Funzione per mostrare il banner se non è già stato accettato
+    window.onload = function() {
+        if (!localStorage.getItem('w0rkee_cookies_accepted')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    }
+
+    // Funzione per nascondere il banner e salvare la scelta
+    function acceptCookies() {
+        localStorage.setItem('w0rkee_cookies_accepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+</script>
+    
 </body>
 </html>
