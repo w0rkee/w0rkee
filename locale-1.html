@@ -15,7 +15,7 @@
             scroll-behavior: smooth;
         }
 
-        /* TESTATA CON IMMAGINE */
+        /* TESTATA */
         .header-locale { 
             height: 40vh; 
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/locale1.jpg') center/cover; 
@@ -79,14 +79,6 @@
             border: 1px solid #eee;
         }
 
-        .services-grid h3 { 
-            margin-top: 0; 
-            font-size: 1rem; 
-            color: #333; 
-            text-transform: uppercase; 
-            margin-bottom: 20px;
-        }
-
         .services-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -103,150 +95,4 @@
         }
 
         .services-list li::before {
-            content: "●";
-            color: #006B6B;
-            font-size: 1.2rem;
-            margin-right: 12px;
-        }
-
-        /* SEZIONE MAPPA */
-        .location-section {
-            margin: 40px 0;
-            text-align: left;
-        }
-
-        .map-wrapper {
-            width: 100%;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid #eee;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-top: 15px;
-        }
-
-        .address-link {
-            display: block;
-            margin-bottom: 10px;
-            color: #006B6B;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-        .address-link:hover { text-decoration: underline; }
-
-        /* AREA PRENOTAZIONE TIDYCAL */
-        .booking-section {
-            margin-top: 50px;
-            padding-top: 40px;
-            border-top: 2px solid #f0f0f0;
-            text-align: center;
-        }
-
-        .booking-section h2 {
-            color: #006B6B;
-            text-transform: uppercase;
-            font-size: 1.6rem;
-            margin-bottom: 5px;
-        }
-
-        .booking-subtitle {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-        }
-
-        /* CONTENITORE CALENDARIO */
-        .tidycal-container {
-            width: 100%;
-            height: 800px;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        /* STILE IFRAME UNIVERSALE */
-        iframe { width: 100%; height: 100%; border: none; }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .container { width: 92%; padding: 25px; margin-top: -60px; }
-            h1 { font-size: 1.8rem; }
-            .services-list { grid-template-columns: 1fr; }
-            .tidycal-container { height: 950px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="header-locale"></div>
-
-    <div class="container">
-        <a href="index.html" class="back-link">← Torna alla lista locali</a>
-        
-        <div class="info-tag">Palermo Centro - Fronte Mare</div>
-        
-        <h1>Bar Le Terrazze</h1>
-        
-        <p>
-            Lavora con una vista mozzafiato. Bar Le Terrazze offre un ambiente sereno e professionale, ideale per chi ha bisogno di concentrazione e una connessione Wi-Fi impeccabile.
-        </p>
-        
-        <div class="services-grid">
-            <h3>Cosa include la tua prenotazione:</h3>
-            <ul class="services-list">
-                <li>Wi-Fi Fibra 1GB</li>
-                <li>Postazione dedicata</li>
-                <li>Sconto 10% su Drink & Food</li>
-                <li>Prese elettriche al tavolo</li>
-                <li>Climatizzazione</li>
-                <li>Accesso area Lounge</li>
-            </ul>
-        </div>
-
-        <div class="location-section">
-            <h3>Dove siamo</h3>
-            <a href="https://www.google.com/maps?q=Via+Vittorio+Emanuele+123+Palermo" target="_blank" class="address-link">
-                📍 Via Vittorio Emanuele, 123 - Palermo (PA)
-            </a>
-            <div class="map-wrapper" style="height: 450px;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.0227181313385!2d13.368482612301934!3d38.11520657178058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d9f454a864d4b1%3A0xc39f280e2f9d8a9f!2sVia+Vittorio+Emanuele%2C+123%2C+90133+Palermo+PA!5e0!3m2!1sit!2sit!4v1712456789012" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-
-        <div class="booking-section">
-            <h2>Prenota la tua postazione</h2>
-            <p class="booking-subtitle">Scegli il giorno e l'orario più comodi per te dal calendario qui sotto.</p>
-            
-            <div class="tidycal-container">
-                <iframe 
-                    src="https://tidycal.com/w0rkee/bar-le-terrazze" 
-                    loading="lazy">
-                </iframe>
-            </div>
-        </div>
-
-    </div>
-
-    <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; background: rgba(0, 107, 107, 0.95); color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; display: none; text-align: center; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
-        <p style="margin: 0 0 15px 0; font-size: 14px;">Utilizziamo i cookie per le prenotazioni. Continuando, accetti la nostra privacy policy.</p>
-        <button onclick="acceptCookies()" style="background: white; color: #006b6b; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; text-transform: uppercase;">ACCETTO</button>
-    </div>
-
-    <script>
-        // Gestione Cookie
-        window.onload = function() {
-            if (!localStorage.getItem('w0rkee_cookies_accepted')) {
-                document.getElementById('cookie-banner').style.display = 'block';
-            }
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('w0rkee_cookies_accepted', 'true');
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-    </script>
-    
-</body>
-</html>
+            content:
