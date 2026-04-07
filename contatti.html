@@ -1,6 +1,68 @@
-<form action="https://formspree.io/f/xbdpwdze" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-    <input type="text" name="nome" placeholder="Il tuo Nome" required style="padding: 12px; border: 1px solid #ccc;">
-    <input type="email" name="email" placeholder="La tua Email" required style="padding: 12px; border: 1px solid #ccc;">
-    <textarea name="messaggio" placeholder="Come possiamo aiutarti?" rows="5" required style="padding: 12px; border: 1px solid #ccc;"></textarea>
-    <button type="submit" style="background: #006b6b; color: white; padding: 15px; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold;">Invia Messaggio</button>
-</form>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - W0rkee</title>
+    <style>
+        body, html { margin: 0; padding: 0; font-family: sans-serif; }
+        
+        /* Riprendiamo lo stile della Hero per coerenza */
+        .contact-page {
+            width: 100vw; min-height: 100vh;
+            background: url('img/hero_w0rkee_smartworking_palermo.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px; box-sizing: border-box;
+        }
+
+        .overlay {
+            background: rgba(0, 107, 107, 0.85); /* Leggermente più scuro per leggere meglio */
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            padding: 40px; border: 2px solid rgba(255, 255, 255, 0.8);
+            text-align: center; width: 100%; max-width: 500px;
+            color: white; border-radius: 15px;
+        }
+
+        h1 { text-transform: uppercase; margin-bottom: 20px; }
+
+        input, textarea {
+            width: 100%; padding: 12px; margin-bottom: 15px;
+            border: none; border-radius: 5px; box-sizing: border-box;
+        }
+
+        button {
+            background: white; color: #006b6b; padding: 15px 30px;
+            border: none; border-radius: 5px; cursor: pointer;
+            font-weight: bold; text-transform: uppercase; width: 100%;
+            transition: 0.3s;
+        }
+
+        button:hover { background: #e0e0e0; }
+        
+        .back-home { margin-top: 20px; display: block; color: white; text-decoration: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div class="contact-page">
+        <div class="overlay">
+            <h1>Contattaci</h1>
+            <p>Hai domande o vuoi prenotare? Scrivici!</p>
+            
+            <form action="https://formspree.io/f/xbdpwdze" method="POST">
+                <input type="text" name="nome" placeholder="Il tuo Nome" required>
+                <input type="email" name="email" placeholder="La tua Email" required>
+                <textarea name="messaggio" placeholder="Come possiamo aiutarti?" rows="5" required></textarea>
+                
+                <input type="hidden" name="_next" value="https://tuo-account.github.io/grazie.html">
+                
+                <button type="submit">Invia Messaggio</button>
+            </form>
+
+            <a href="index.html" class="back-home">← Torna alla Home</a>
+        </div>
+    </div>
+
+</body>
+</html>
