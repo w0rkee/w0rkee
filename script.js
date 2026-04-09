@@ -30,16 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.top = '0px';
         }
 
-        // Cambia il testo "Seleziona lingua" in "🌐 SELECT"
-        var gadgetText = document.querySelector('.goog-te-menu-value span:first-child');
-        if (gadgetText) {
-            // Controlliamo se contiene le scritte standard di Google
-            if (gadgetText.innerText.trim() === 'Seleziona lingua' || 
-                gadgetText.innerText.trim() === 'Select Language' || 
-                gadgetText.innerText.trim() === 'Seleccionar idioma') {
-                gadgetText.innerText = '🌐 SELECT'; 
-            }
-        }
+        // Cambia il testo del selettore in modo diretto
+var gadgetText = document.querySelector('.goog-te-menu-value span:first-child');
+if (gadgetText) {
+    gadgetText.innerText = '🌐 LANGUAGE'; 
+}
     });
 
     observer.observe(document.body, { childList: true, subtree: true, attributes: true });
